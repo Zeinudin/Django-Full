@@ -1,0 +1,41 @@
+
+
+<h1 style="text-align: center; margin-top: 100px;">Create new reception</h1>
+
+<div id="form" class="example-form">
+      
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input [(ngModel)]="reception.date" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field  appearance = "fill" class="example-full-width"> 
+          <mat-label > patient info </mat-label> 
+          <input [(ngModel)]="reception.patient_info" matInput> 
+      </mat-form-field> 
+      
+      <mat-form-field  appearance = "fill" class="example-full-width"> 
+        <mat-label> Select time</mat-label> 
+        <mat-select  [(ngModel)]="reception.time">
+               
+          <mat-option *ngFor="let t of time"  value = {{t.id}}> {{t.start_time}} - {{t.end_time}} </mat-option>
+        </mat-select> 
+      </mat-form-field> 
+      
+      <mat-form-field  appearance = "fill" class="example-full-width"> 
+          <mat-label> Select doctor</mat-label> 
+          <mat-select [(ngModel)]="reception.doctor">
+                 
+            <mat-option *ngFor="let doctor of doctors"  value = {{doctor.id}}> {{doctor.name}} {{doctor.last_name}} </mat-option>
+          </mat-select> 
+        </mat-form-field> 
+        <section>
+            <div class="example-button-row">
+                <button (click)="saveReception()"  mat-raised-button color="primary">Submit</button>
+            </div>
+          </section>
+
+</div>
+    

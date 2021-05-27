@@ -1,0 +1,87 @@
+/* HeroesComponent's private CSS styles */
+.example-spacer {
+  flex: 1 1  auto;
+}
+
+#example-button-row {
+  margin: 8px 8px 8px 0;
+}
+
+#left_margin {
+  margin-left: 100px;
+}
+
+
+.receptions {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .receptions li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  .receptions li:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+    left: .1em;
+  }
+  .receptions li.selected {
+    background-color: black;
+    color: white;
+  }
+  .receptions li.selected:hover {
+    background-color: #505050;
+    color: white;
+  }
+  .receptions li.selected:active {
+    background-color: black;
+    color: white;
+  }
+  .receptions .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color:#405061;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  input {
+    padding: .5rem;
+  }
+
+
+  #badge_1 {
+    position: relative;
+  display: inline-block;
+  font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(245,245,245);
+  text-shadow: 0 -1px rgba(0,0,0,.1);
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;  
+  border: none;
+  margin-left: 20px;
+  border-radius: 3px;
+  background: #0c9c0d linear-gradient(#15033f, #da2202);
+  box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}

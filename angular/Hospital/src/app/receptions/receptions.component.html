@@ -1,0 +1,48 @@
+
+
+<h2 style="text-align: center; margin-top: 0px;">My Reception</h2>
+<button mat-icon-button color="accent" (click)="refresh()" aria-label="Example icon button with a menu icon">
+  <mat-icon id="example-button-row"  >refresh</mat-icon>
+</button>
+<!-- <ul class="receptions">
+  <li *ngFor="let reception of receptions">
+      <a routerLink="/detail/{{reception.id}}">
+        <span class="badge">{{reception.id}}</span> {{reception.date}}
+      </a>
+      <a routerLink="/delete-reception/{{reception.id}}">
+        <span id="badge_1">x</span>
+      </a>
+  </li>
+</ul> -->
+
+
+
+
+<mat-nav-list>
+  <mat-list-item  *ngFor="let reception of receptions" >
+     
+      <span id="example-button-row"> </span> 
+      <span id="example-button-row">Your reception on date - {{reception.date}}</span>
+      <span id="left_margin"> info: {{reception.patient_info}}</span>
+      <span class="example-spacer"></span>
+
+      <mat-icon id="example-button-row" routerLink="/detail/{{reception.id}}">edit</mat-icon>
+      <mat-icon id="example-button-row" routerLink="/delete-reception/{{reception.id}}">delete</mat-icon>
+      
+  </mat-list-item>
+</mat-nav-list>
+
+
+<!-- <button mat-raised-button (click)="removeColumn()"> Remove column </button>
+<button mat-raised-button (click)="shuffle()"> Shuffle </button> -->
+
+
+
+<!-- <table mat-table [dataSource]="receptions" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table> -->

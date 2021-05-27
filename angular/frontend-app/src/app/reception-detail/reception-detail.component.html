@@ -1,0 +1,70 @@
+
+
+<div id="middle" *ngIf="reception">
+
+    
+
+    <!-- <h2>{{reception.date | uppercase}} Details</h2>
+    <div><span>id: </span>{{reception.id}}</div>
+    <div>
+        <label for="reception-patient info">reception patient info: </label>
+        <input id="reception-patient info" [(ngModel)]="reception.patient_info" placeholder="patient info">
+    </div>
+    <div>
+        <label for="reception-time">reception time: </label>
+        <input id="reception-time" [(ngModel)]="reception.time" placeholder="time">
+    </div>
+    <div>
+        <label for="reception-doctor">reception doctor: </label>
+        <input id="reception-doctor" [(ngModel)]="reception.doctor" placeholder="doctor">
+    </div>
+
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button> -->
+
+
+
+    <h1 style="text-align: center; margin-top: 100px;">Change reception details</h1>
+
+    <div id="form" class="example-form">
+          
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Choose a date</mat-label>
+            <input [(ngModel)]="reception.date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    
+          <mat-form-field  appearance = "fill" class="example-full-width"> 
+              <mat-label > patient info </mat-label> 
+              <input [(ngModel)]="reception.patient_info" matInput> 
+          </mat-form-field> 
+          
+          <mat-form-field  appearance = "fill" class="example-full-width"> 
+            <mat-label> Select time</mat-label> 
+            <mat-select [(value)]=reception.time [(ngModel)]="reception.time" selected>
+                   
+              <mat-option *ngFor="let t of time"  value = {{t.id}}> {{t.start_time}} - {{t.end_time}} </mat-option>
+            </mat-select> 
+          </mat-form-field> 
+
+        
+          
+          <mat-form-field  appearance = "fill" class="example-full-width"> 
+              <mat-label> Select doctor</mat-label> 
+              <mat-select [(ngModel)]="reception.doctor">
+                     
+                <mat-option *ngFor="let doctor of doctors"  value = {{doctor.id}}> {{doctor.name}} {{doctor.last_name}} </mat-option>
+              </mat-select> 
+            </mat-form-field> 
+            <section>
+                <div class="example-button-row">
+                    <button (click)="goBack()" mat-raised-button color="primary">go back</button>
+                    <button (click)="save()" mat-raised-button color="primary">save changes</button>
+                </div>
+              </section>
+    
+    </div>
+    
+</div>
+

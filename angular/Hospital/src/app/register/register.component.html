@@ -1,0 +1,22 @@
+
+
+<h1 style="text-align: center; margin-top: 100px; ">Registration</h1>
+<div id="form" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="user.username" placeholder="Login" value="" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" placeholder="Password" value="" required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+  </mat-form-field>
+  
+  <section>
+    <div class="example-button-row">
+      <button (click)="RegisterOnServe()" mat-raised-button color="primary">Register</button>
+    </div>
+  </section>
+</div>

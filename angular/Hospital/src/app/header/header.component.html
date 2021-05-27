@@ -1,0 +1,32 @@
+<p>
+    <mat-toolbar color="primary">
+     
+        <button routerLink="/home" mat-button color="primary"><h3 id="white_color">Hospital</h3></button>
+
+      <span class="example-spacer"></span>
+
+      <section>
+        <div class="example-button-row">
+  
+        
+            <button *ngIf = "userIsAuthenticated" mat-raised-button routerLink="/add-reception"> Add reception </button>
+            
+
+            <a  *ngIf = "!userIsAuthenticated" button mat-raised-button routerLink = "/register">Register</a>
+  
+            <a  *ngIf = "!userIsAuthenticated" button mat-raised-button color="accent" routerLink = "/login">Login</a>
+      
+            
+            
+                <button *ngIf = "userIsAuthenticated" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+                <mat-menu  #menu="matMenu">
+                    <a mat-menu-item routerLink="/receptions">My receptions</a>
+                    
+                    <button mat-menu-item color="accent" (click)="onLogout()">Logout</button>
+                </mat-menu>
+        </div>
+      </section>
+    </mat-toolbar>
+</p>
